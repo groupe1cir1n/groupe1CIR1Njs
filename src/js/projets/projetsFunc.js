@@ -13,29 +13,25 @@ function returnToTopButton(){
     document.body.appendChild(TopButton);
 }
 
-function returnToTop(){
-    document.body.scrollTop = 0;
-    document.documentElement.scrollTop = 0;
-}
 
 function changeImage(image){
     //Verifie si le nom de l'image est img1 ou img2, sachant que chaque image est dans un dossier contenant le nom du projet
     if(image.src.includes("img1")){
-        console.log("img1 to img2");
+        //console.log("img1 to img2");
         image.src = image.src.replace("img1", "img2");
     }
     else if(image.src.includes("img2")){
-        console.log("img2 to img1");
+        //console.log("img2 to img1");
         image.src = image.src.replace("img2", "img1");
     }
-    console.log("Ni img1 ni img2");
+    //console.log("Ni img1 ni img2");
 }
 
 
 function changeImageUnderMouse(){
     document.addEventListener('click', function(event){
         var elementClicked = event.target;
-        console.log(elementClicked);
+        //console.log(elementClicked);
         //Verifie si l'element cliqué est une image
         if(elementClicked.tagName == "IMG"){
             changeImage(elementClicked);
