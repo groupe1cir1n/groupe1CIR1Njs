@@ -1,0 +1,22 @@
+body{
+    font-family: Arial, sans-serif;
+}
+
+img{
+    width: auto;
+    height: 100px;
+}
+
+.main_recherche{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 20px;
+    margin-left: 75px;
+    margin-right: 75px;
+    padding-top: 25px;
+}
+strong{
+    padding-bottom: 20px;
+    padding-top: 40px;
+}

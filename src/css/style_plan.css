@@ -1,0 +1,38 @@
+body{
+    font-family: Arial, sans-serif;
+}
+
+#main{
+    margin-left: 2em;
+    margin-right: 2em;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+    gap: 20px;
+}
+
+.titre{
+    color: #2F68BF;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 32px;
+}
+
+.text{
+    font-style: normal;
+    font-size: 17px;
+}
+
+img{
+    width: auto;
+    height: 100px;
+}
+
+@media (max-width: 1200px) {
+    #main{
+        flex-direction: column;
+        flex-wrap: wrap;
+    }    
+}

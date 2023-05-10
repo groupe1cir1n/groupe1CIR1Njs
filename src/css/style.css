@@ -1,0 +1,46 @@
+body{
+    font-family: Arial, sans-serif;
+}
+
+img{
+    width: auto;
+    height: 100px;
+}
+
+.main{
+    display: flex;
+    margin-left: 20px;
+    margin-right: 20px;
+    align-items: center;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+}
+.actu{
+    background-color: #D9D9D9;
+}
+#img_analyse{
+    width: 500px;
+    height: 330px;
+}
+
+.secondary{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.btn{
+    background-color: #515C3A;
+    border-radius: 20px;
+    width: 30%;
+    color: white;
+    padding: 15px;
+    margin-bottom: 30px;
+    text-decoration: none;
+}
+
+#img_competence{
+    width: 800px;
+    height: 450px;
+}

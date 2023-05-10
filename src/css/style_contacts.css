@@ -1,0 +1,57 @@
+body{
+    font-family: Arial, sans-serif;
+}
+
+img{
+    width: auto;
+    height: 100px;
+}
+#text{
+    text-align: center;
+    color: #2244AC;
+}
+
+
+.formulaire{
+    text-align: center;
+}
+
+
+.input-container {
+  display: flex;
+  width: 50%;
+  margin-bottom: 15px;
+}
+
+.icon {
+  padding: 10px;
+  background: #7D7D7D;
+  width: 50px;
+  height: auto;
+  text-align: center;
+}
+
+.input-field {
+  width: 100%;
+  padding: 10px;
+  outline: none;
+}
+
+.btn {
+  background-color: #2244AA;
+  color: white;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border: none;
+  cursor: pointer;
+  width: 5%;
+  border-radius: 3px;
+}
+
+.center{
+  display: flex;
+  text-align: center;
+  justify-content: center;
+}

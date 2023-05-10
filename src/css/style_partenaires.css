@@ -1,0 +1,83 @@
+body{
+    font-family: Arial, sans-serif;
+}
+
+h1{
+    margin-left: 1em;
+}
+
+#logoLab{
+    width: auto;
+    height: 100px;
+}
+
+#flexnationaux{
+    margin-left: 4em;
+    margin-right: 4em;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1em
+}
+
+#flexinternationaux{
+    margin-left: 4em;
+    margin-right: 4em;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1em
+}
+
+.tag1{
+    background-color: #6F737C;
+    color: white;
+    padding-left: 1em;
+    padding-right: 1em;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+    font-size: 10px;
+    margin: 1em;
+    text-align: center;
+    border-radius: 5px;
+}
+
+.tag2{
+    background-color: #6F737C;
+    color: white;
+    padding-left: 1em;
+    padding-right: 1em;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+    font-size: 10px;
+    margin: 1em;
+    text-align: center;
+    border-radius: 5px;
+}
+
+.tag3{
+    background-color: #6F737C;
+    color: white;
+    padding-left: 1em;
+    padding-right: 1em;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+    font-size: 10px;
+    margin: 1em;
+    text-align: center;
+    border-radius: 5px;
+}
+
+.Tags{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.logopartenaires{
+    width: 178px;
+    height: auto;
+}

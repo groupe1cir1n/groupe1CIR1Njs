@@ -1,0 +1,28 @@
+body{
+    font-family: Arial, sans-serif;
+}
+
+h1{
+    margin-left: 2em;
+    font-size: 32px;
+}
+
+#ptext{
+    margin-left: 3em;
+    font-size: 24px;
+}
+
+#ultext{
+    margin-left: 4em;
+    font-size: 24px;
+}
+
+.pdf1{
+    width: 17px;
+    height: 23px;
+}
+
+img{
+    width: auto;
+    height: 100px;
+}

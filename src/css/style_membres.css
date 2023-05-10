@@ -1,0 +1,127 @@
+body{
+    font-family: Arial, sans-serif;
+}
+
+img{
+    width: auto;
+    height: 100px;
+}
+
+.cardImg{
+    margin-top: 1em;
+    width: 10em;
+    height: 10em;
+    margin-left: 5em;
+    border-radius: 50%;
+}
+
+.CardDesc{
+    color: #898989;
+    text-align: center;
+    text-decoration: none;
+}
+
+.BigCard{
+    border: 1px solid black;
+    display: flex;
+    flex-direction: column;
+    width: 20em;
+}
+
+.SmallCard{
+    border: 1px solid black;
+    display: flex;
+    flex-direction: column;
+    width: 20em;
+}
+
+.line{
+    height: 1px;
+    background: black;
+    margin-left: 1em;
+    margin-right: 1em;
+    margin-bottom: 1em;
+}
+
+.Icons{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.icon{
+    margin: 0 10px;
+    height: 3em;
+    width: auto;
+}
+
+.Tags{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 3em 3em 3em;
+}
+
+.tag1{
+    background-color: #6F737C;
+    color: white;
+    padding-left: 1em;
+    padding-right: 1em;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+    font-size: 10px;
+    margin: 1em;
+    text-align: center;
+    border-radius: 5px;
+}
+
+.tag2{
+    background-color: #6F737C;
+    color: white;
+    padding-left: 1em;
+    padding-right: 1em;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+    font-size: 10px;
+    margin: 1em;
+    text-align: center;
+    border-radius: 5px;
+}
+
+.tag3{
+    background-color: #6F737C;
+    color: white;
+    padding-left: 1em;
+    padding-right: 1em;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+    font-size: 10px;
+    margin: 1em;
+    text-align: center;
+    border-radius: 5px;
+}
+
+.BigCardFlex{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 5em;
+}
+
+.SmallCardFlex{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 5em;
+}
+
+h2{
+    text-align: center;
+}
+
+.BigCardHover:hover{
+    background-color: #555555;
+    color: white;
+}
