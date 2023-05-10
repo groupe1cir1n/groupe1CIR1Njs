@@ -44,3 +44,7 @@ img{
     width: 800px;
     height: 450px;
 }
+
+#img_hover{
+    width: auto;
+}
