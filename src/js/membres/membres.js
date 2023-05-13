@@ -71,6 +71,14 @@ document.addEventListener('DOMContentLoaded', function() {
 
     document.body.appendChild(editButton);
 
+
+    document.addEventListener('mouseover', function(e){
+        const ayoub = document.getElementById('AyoubKarine');
+        const bubbles = document.createElement('span');
+        bubbles.style.left = e.offsetX + 'px';
+        bubbles.style.top = e.offsetY + 'px';
+        ayoub.appendChild(bubbles);
+    });
 });
 
 function addMember() {
