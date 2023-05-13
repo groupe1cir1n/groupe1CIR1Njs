@@ -1,6 +1,11 @@
+import { zoom } from "./index.js";
+
 function main() {
-    zoom();
-    addEventListener("mouseover", zoom(imgAnalyse));
+    var imgAnalyse = document.getElementById("img_analyse");
+    zoom(imgAnalyse);
+    imgAnalyse.addEventListener("mouseover", function() {
+        zoom(imgAnalyse);
+    });
 }
 
 main();

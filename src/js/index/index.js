@@ -1,10 +1,8 @@
-
-var imgAnalyse = document.getElementById("img_analyse");
-
 function zoom(img){
-    img.setAtribute("width", "width*2px")
-    img.setAtribute("height", "height*2px")
+    var width = parseInt(img.getAttribute("width"));
+    var height = parseInt(img.getAttribute("height"));
+    img.setAttribute("width", width * 2)
+    img.setAttribute("height", height * 2)
 }
 
-addEventListener("mouseover", zoom(imgAnalyse));
-
+export { zoom };
