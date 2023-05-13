@@ -123,5 +123,8 @@ h2{
 
 .BigCardHover:hover{
     background-color: #555555;
+    transition:
+        background-color 0.4s ease-in-out,
+        color 0.4s ease-in-out;
     color: white;
 }
