@@ -28,5 +28,33 @@ function startTimer() {
     }, 1000);
 }
 
+document.addEventListener("click", function(event) {
+    if (event.target.id === "membresNav"){
+        const confirmation = confirm('Voulez vous vraiment aller sur la page membres?');
+        if (confirmation === true) {
+            window.location.href = "membres.html";
+        }
+        else {
+            event.preventDefault(); // Empêche la navigation vers membres.html si la confirmation est annulée
+        }
+    }
+});
+
+const menuItems = document.querySelectorAll('.menu li');
+
+menuItems.forEach((menuItem) => {
+    const originalBgColor = menuItem.style.backgroundColor;
+
+    menuItem.addEventListener('mouseover', () => {
+        const newBgColor = '#314153'; // Remplacez '#ccc' par la nouvelle couleur que vous souhaitez utiliser
+        menuItem.style.backgroundColor = newBgColor;
+        console.log(`L'ancienne couleur de fond était ${originalBgColor}, la nouvelle couleur est ${newBgColor}.`);
+    });
+
+    menuItem.addEventListener('mouseout', () => {
+        menuItem.style.backgroundColor = originalBgColor;
+    });
+});
+
 updateTime();
 startTimer();

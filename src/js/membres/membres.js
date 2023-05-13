@@ -1,5 +1,4 @@
 
-console.log("Membres.js started");
 let editMode = false;
 document.addEventListener('DOMContentLoaded', function() {
 
@@ -22,7 +21,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
         if (editMode === true) {
             const confirmation = confirm('Voulez vous vraiment quitter le mode édition?');
-            if (confirmation === true) {console.log("Désactivation du mode édition");
+            if (confirmation === true) {
+                console.log("Désactivation du mode édition");
                 editMode = false;
                 editButton.style.background = '#48435C';
                 const removeMemberButton = document.getElementById('addMemberButton');
@@ -71,7 +71,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     document.body.appendChild(editButton);
 
-
+/*
     document.addEventListener('mouseover', function(e){
         const ayoub = document.getElementById('AyoubKarine');
         const bubbles = document.createElement('span');
@@ -79,6 +79,7 @@ document.addEventListener('DOMContentLoaded', function() {
         bubbles.style.top = e.offsetY + 'px';
         ayoub.appendChild(bubbles);
     });
+    */
 });
 
 function addMember() {
@@ -113,5 +114,3 @@ function addMember() {
     membersContainer.appendChild(newCard);
 }
 
-
-console.log("Membres.js loaded");

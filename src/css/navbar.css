@@ -47,3 +47,7 @@ nav {
   height: auto;
 }
 
+.menu li:hover{
+  background-color: #314153;
+}
+
