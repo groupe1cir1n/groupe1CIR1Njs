@@ -3,6 +3,7 @@
  <head>
    <meta charset="utf-8">
    <title> Contacts </title>
+   <script src="src/js/InfosEtContact/contacts/contacts.js" defer></script>
    <script src="https://kit.fontawesome.com/5b8b37978c.js" crossorigin="anonymous"></script>
    <link rel="stylesheet" href="src/css/appear.css">
    <link rel="stylesheet" href="src/css/style_contacts.css">
@@ -46,20 +47,24 @@
   </div>
   <h1 id = text><strong>Contactez le responsable de l’équipe</strong> <br>(Maher Jridi - maher.jridi@isen-ouest.yncrea.fr)</h1>
   <form action="contacts.html" method="get" class="formulaire">
+    <a id="usrnError"></a>
     <div class="center">
       <div class="input-container">
         <img class="icon" src="/src/img/svg/user-solid.svg">
-        <input class="input-field" type="text" placeholder="Prénom Nom" name="usrnm">
+        <input class="input-field" type="text" placeholder="Prénom Nom" name="usrnm" id="usrnInp">
       </div>
     </div>
+    <a id="emailError"></a>
     <div class="center">
       <div class="input-container">
         <img class="icon" src="/src/img/svg/at-solid.svg">
-        <input class="input-field" type="text" placeholder="email@exemple.com" name="email">
+        <input class="input-field" type="text" placeholder="email@exemple.com" name="email" id="emailInp">
       </div>
     </div>
-    <textarea name="textarea1" placeholder="Votre message (1000 caractères maximum)" rows="5" cols="50"></textarea><br> 
-    <button class="btn" type="submit">Envoyer</button>       
+    <a id="textarea1Error"></a>
+    <br>
+    <textarea name="textarea1" placeholder="Votre message (1000 caractères maximum)" rows="5" cols="50" id="textarea1Inp"></textarea><br>
+    <button id="submitBtn" class="btn">Envoyer</button>
   </form>
   <img src="src/img/LabISEN.png" alt="Logo du LabISEN">
     <footer>

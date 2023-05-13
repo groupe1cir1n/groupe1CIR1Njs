@@ -55,3 +55,19 @@ img{
   text-align: center;
   justify-content: center;
 }
+
+.btn-notvalid{
+    background-color: #7d7d7d;
+}
+
+#usrnError{
+    color: red;
+}
+
+#emailError{
+    color: red;
+}
+
+#textarea1Error{
+    color: red;
+}
