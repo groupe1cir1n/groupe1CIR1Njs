@@ -49,3 +49,23 @@ footer{
         padding-bottom: 0;
     }
 }
+
+.telFooter{
+    text-decoration: none;
+    color: white;
+}
+
+.telFooter:visited{
+    text-decoration: none;
+    color: white;
+}
+
+.telFooter:hover{
+    text-decoration: underline;
+    color: white;
+}
+
+.telFooter:active{
+    text-decoration: none;
+    color: white;
+}
