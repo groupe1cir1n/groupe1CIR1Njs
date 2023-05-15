@@ -44,9 +44,9 @@ const menuItems = document.querySelectorAll('.menu li');
 
 menuItems.forEach((menuItem) => {
     const originalBgColor = menuItem.style.backgroundColor;
-
+    console.log(originalBgColor)
     menuItem.addEventListener('mouseover', () => {
-        const newBgColor = '#314153'; // Remplacez '#ccc' par la nouvelle couleur que vous souhaitez utiliser
+        const newBgColor = '';
         menuItem.style.backgroundColor = newBgColor;
         console.log(`L'ancienne couleur de fond était ${originalBgColor}, la nouvelle couleur est ${newBgColor}.`);
     });
@@ -58,3 +58,31 @@ menuItems.forEach((menuItem) => {
 
 updateTime();
 startTimer();
+
+//Copy warning
+
+document.addEventListener('copy', function(event) {
+    console.log('Attention, le plagiat est interdit. Veuillez citer vos sources.');
+});
+
+
+
+// On sélectionne tous les éléments qui contiennent un numéro de téléphone
+let phoneNumbers = document.querySelectorAll('a.telFooter');
+
+phoneNumbers.forEach(function(phoneNumber) {
+    console.log(phoneNumber);
+    phoneNumber.addEventListener('copy', function(event) {
+        let copiedText = event.clipboardData.getData('text/plain');
+        console.log(copiedText);
+        let input = prompt('Si vous voulez appeler ce numéro : ' + copiedText + ', entrez le de nouveau dans le champ ci-dessous puis validez');
+        if (input === copiedText){
+            console.log("Vous appelez ce numéro : " + copiedText);
+            let audio = new Audio('/src/sound/sonnerie.mp3');
+            audio.play();
+            setTimeout(function() {
+                audio.pause();
+            }, 5000);
+        }
+    });
+});
