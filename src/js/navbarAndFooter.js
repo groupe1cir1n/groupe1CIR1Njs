@@ -94,6 +94,7 @@ document.getElementById('pageContent').classList.add('hidden');
 window.addEventListener('load', function() {
     setTimeout(function () {
         document.getElementById('loader').style.display = 'none';
+        document.getElementById('loaderContainer').style.display = 'none';
         document.getElementById('pageContent').style.visibility = 'visible';
     }, 2000);
 });
