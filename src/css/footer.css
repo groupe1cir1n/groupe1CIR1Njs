@@ -10,12 +10,14 @@ footer{
     color: #FFFFFF;
     background-color: #48435C;
     border-radius: 20px;
+    margin-top: 10px;
 }
 .foot{
     display: flex;
     flex-direction: row;
     text-align: center;
     padding: 2em;
+    padding-bottom: 1em;
     flex-grow: 1;
     align-items: center;
     justify-content: space-between;
