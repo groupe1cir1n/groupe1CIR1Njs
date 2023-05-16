@@ -48,7 +48,7 @@ document.addEventListener('DOMContentLoaded', function() {
                         addMemberButton.innerText = 'Ajouter un membre';
                         addMemberButton.id = 'addMemberButton';
                         addMemberButton.style.position = 'fixed';
-                        addMemberButton.style.top = '200px';
+                        addMemberButton.style.top = '120px';
                         addMemberButton.style.right = '20px';
                         addMemberButton.style.padding = '10px';
                         addMemberButton.style.background = '#48435C';
@@ -85,25 +85,31 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 function addMember() {
-    console.log('Add Member')
+    //Create the newMember
     const newCard = document.createElement('div');
-    newCard.classList.add('NewMembresJS', 'SmallCard');
+    newCard.classList.add('NewMembresJS', 'SmallCard', 'Card');
 
+    //Add the image of the newMember
     const cardIMG = document.createElement('img');
     cardIMG.setAttribute('src', '/src/img/membres/NewCard.jpg')
     cardIMG.className = 'cardImg';
     cardIMG.setAttribute('alt', 'Nom du membre')
     newCard.appendChild(cardIMG);
 
+
+    //Add the hover of the newMember
     const CardHover = document.createElement('div');
     CardHover.className = 'BigCardHover';
 
+
+    //Add the name of the newMember
     const memberName = document.createElement('h2');
     memberName.innerText = 'Nom du membre';
     CardHover.appendChild(memberName);
 
     newCard.appendChild(CardHover);
 
+    //Add the delete button of the newMember
     const deleteButton = document.createElement('button');
     deleteButton.innerText = 'Supprimer';
     deleteButton.id = 'deleteButton';
@@ -112,7 +118,72 @@ function addMember() {
     });
     newCard.appendChild(deleteButton);
 
+    //Add the modal of the newMember
+    const modal = document.createElement('div');
+    modal.className = 'modal';
+    const modalContent = document.createElement('div');
+    modalContent.className = 'modal-content';
+    const closeBtn = document.createElement('span');
+    closeBtn.className = 'close';
+    closeBtn.innerHTML = '&times;';
+    closeBtn.addEventListener('click', function() {
+        modal.style.display = 'none';
+    });
+    //Add the content of the modal
+    modalContent.appendChild(closeBtn);
+
+    //Add the image of the modal
+    const modalIMG = document.createElement('img');
+    modalIMG.setAttribute('src', '/src/img/membres/NewCard.jpg')
+    modalIMG.className = 'cardImg';
+    modalIMG.setAttribute('alt', 'Nom du membre')
+    modalContent.appendChild(modalIMG);
+
+    //Add the hover of the modal
+    const modalHover = document.createElement('div');
+    modalHover.className = 'BigCardHover';
+
+    //Add the name of the modal
+    const modalName = document.createElement('h2');
+    modalName.innerText = 'Nom du membre';
+
+
+    modalHover.appendChild(modalName);
+    modalContent.appendChild(modalHover);
+    modal.appendChild(modalContent);
+
+    //Add the action when the newMember is clicked for the modal
+    newCard.addEventListener('click', function() {
+        modal.style.display = 'block';
+    });
+
+    //Add the newMember to the page
     const membersContainer = document.getElementById('NewMembres');
     membersContainer.appendChild(newCard);
+    membersContainer.appendChild(modal);
 }
 
+
+//Modal for the card
+
+const cards = document.querySelectorAll('.Card');
+const modals = document.querySelectorAll('.modal');
+const closeBtns = document.querySelectorAll('.close');
+
+function displayModal(event) {
+    const cardIndex = Array.from(cards).findIndex((card) => card === event.currentTarget);
+    modals[cardIndex].style.display = 'block';
+}
+
+function closeModal(event) {
+    const modal = event.currentTarget.closest('.modal');
+    modal.style.display = 'none';
+}
+
+cards.forEach(function(card) {
+    card.addEventListener('click', displayModal);
+});
+
+closeBtns.forEach(function(btn) {
+    btn.addEventListener('click', closeModal);
+});
