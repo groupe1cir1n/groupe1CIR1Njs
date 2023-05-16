@@ -1,8 +1,10 @@
 
 let editMode = false;
+//Verifie si toute la page est chargée
 document.addEventListener('DOMContentLoaded', function() {
+    //Attends la fin du loader pour afficher le bouton
     setTimeout(function () {
-
+        //Création du bouton Mode édition
         const editButton = document.createElement('button');
         editButton.innerText = 'Mode édition';
 
@@ -18,13 +20,13 @@ document.addEventListener('DOMContentLoaded', function() {
         editButton.style.cursor = 'pointer';
 
         editButton.addEventListener('click', function() {
-
-
+            //Verifie si le mode édition est activé si oui demande confirmation pour le désactiver
             if (editMode === true) {
                 const confirmation = confirm('Voulez vous vraiment quitter le mode édition?');
                 if (confirmation === true) {
                     console.log("Désactivation du mode édition");
                     editMode = false;
+                    //Supprime le bouton ajouter un membre
                     editButton.style.background = '#48435C';
                     const removeMemberButton = document.getElementById('addMemberButton');
                     removeMemberButton.remove();
@@ -36,6 +38,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
                 }
             }
+            //Si le mode édition n'est pas activé demande le nom et le mot de passe du profil administrateur
             else{
                 const adminName = prompt('Entrez le nom du profil administrateur :');
                 if (adminName === 'admin') {
@@ -43,6 +46,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     if (adminPwd === 'admin_pwd') {
                         editMode = true;
                         console.log('Mode édition activé !');
+                        //Création du bouton ajouter un membre
                         editButton.style.background = 'red';
                         const addMemberButton = document.createElement('button');
                         addMemberButton.innerText = 'Ajouter un membre';
@@ -63,9 +67,11 @@ document.addEventListener('DOMContentLoaded', function() {
                         document.body.appendChild(addMemberButton);
                     } else {
                         alert('Mot de passe du profil administrateur incorrect !');
+                        console.error('Mot de passe du profil administrateur incorrect !');
                     }
                 } else {
                     alert('Nom de profil administrateur incorrect !');
+                    console.error('Nom de profil administrateur incorrect !');
                 }
             }
         });
@@ -85,11 +91,11 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 function addMember() {
-    //Create the newMember
+    //Création de la nouvelle carte
     const newCard = document.createElement('div');
     newCard.classList.add('NewMembresJS', 'SmallCard', 'Card');
 
-    //Add the image of the newMember
+    //Ajout de l'image de la nouvelle carte
     const cardIMG = document.createElement('img');
     cardIMG.setAttribute('src', '/src/img/membres/NewCard.jpg')
     cardIMG.className = 'cardImg';
@@ -97,19 +103,19 @@ function addMember() {
     newCard.appendChild(cardIMG);
 
 
-    //Add the hover of the newMember
+    //Ajout de l'hover de la nouvelle carte
     const CardHover = document.createElement('div');
     CardHover.className = 'BigCardHover';
 
 
-    //Add the name of the newMember
+    //Ajout du nom de la nouvelle carte
     const memberName = document.createElement('h2');
     memberName.innerText = 'Nom du membre';
     CardHover.appendChild(memberName);
 
     newCard.appendChild(CardHover);
 
-    //Add the delete button of the newMember
+    //Ajoout du bouton supprimer
     const deleteButton = document.createElement('button');
     deleteButton.innerText = 'Supprimer';
     deleteButton.id = 'deleteButton';
@@ -118,7 +124,7 @@ function addMember() {
     });
     newCard.appendChild(deleteButton);
 
-    //Add the modal of the newMember
+    //Ajout du modal
     const modal = document.createElement('div');
     modal.className = 'modal';
     const modalContent = document.createElement('div');
@@ -129,21 +135,21 @@ function addMember() {
     closeBtn.addEventListener('click', function() {
         modal.style.display = 'none';
     });
-    //Add the content of the modal
+
     modalContent.appendChild(closeBtn);
 
-    //Add the image of the modal
+    //Ajout de l'image du modal
     const modalIMG = document.createElement('img');
     modalIMG.setAttribute('src', '/src/img/membres/NewCard.jpg')
     modalIMG.className = 'cardImg';
     modalIMG.setAttribute('alt', 'Nom du membre')
     modalContent.appendChild(modalIMG);
 
-    //Add the hover of the modal
+    //Ajout de l'hover du modal
     const modalHover = document.createElement('div');
     modalHover.className = 'BigCardHover';
 
-    //Add the name of the modal
+    //Ajoout du nom du modal
     const modalName = document.createElement('h2');
     modalName.innerText = 'Nom du membre';
 
@@ -152,19 +158,19 @@ function addMember() {
     modalContent.appendChild(modalHover);
     modal.appendChild(modalContent);
 
-    //Add the action when the newMember is clicked for the modal
+    //Ajoout de l'event click sur la nouvelle carte pour afficher le modal
     newCard.addEventListener('click', function() {
         modal.style.display = 'block';
     });
 
-    //Add the newMember to the page
+    //Ajout de la nouvelle carte et du modal a la page
     const membersContainer = document.getElementById('NewMembres');
     membersContainer.appendChild(newCard);
     membersContainer.appendChild(modal);
 }
 
 
-//Modal for the card
+//Modal pour la carte de chaque membre
 
 const cards = document.querySelectorAll('.Card');
 const modals = document.querySelectorAll('.modal');

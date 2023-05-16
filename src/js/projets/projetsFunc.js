@@ -1,5 +1,7 @@
 function returnToTopButton(){
+    //Attend 2 secondes avant de creer le bouton pour attendre la fin du loader
     setTimeout(function (){
+        //Creation du bouton
         var TopButton = document.createElement("button");
         TopButton.setAttribute("id", "returnToTopButton");
         TopButton.setAttribute("onclick", "returnToTop()");

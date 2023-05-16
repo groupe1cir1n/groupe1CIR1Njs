@@ -1,22 +1,28 @@
 function validateForm() {
+    //Récupérer les valeurs des champs
     var prenomNom = document.getElementById("usrnInp").value;
     var email = document.getElementById("emailInp").value;
     var message = document.getElementById("textarea1Inp").value;
 
+    //Définir les expressions régulières
     var prenomNomRegex = /^[a-zA-Z]+\s[a-zA-Z]+$/;
     var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
+    //Tester les valeurs des champs avec les expressions régulières
     var isPrenomNomValid = prenomNomRegex.test(prenomNom);
     var isEmailValid = emailRegex.test(email);
     var isMessageValid = message.length >= 20 && message.length <= 1000;
     //console.log(isPrenomNomValid, isEmailValid, isMessageValid);
     //console.log(prenomNom, email, message);
 
+    //Récupérer les éléments d'erreur
     var submitBtn = document.getElementById("submitBtn");
     var prenomNomError = document.getElementById("usrnError");
     var emailError = document.getElementById("emailError");
     var messageError = document.getElementById("textarea1Error");
 
+
+    //Afficher les messages d'erreur
     if (isPrenomNomValid) {
         prenomNomError.innerHTML = "";
     } else {
@@ -46,8 +52,22 @@ function validateForm() {
 }
 
 document.getElementById("submitBtn").addEventListener("click", function() {
+    //Pile ou face
+    let pileOuFace = prompt("Pile ou face ?");
+    let result = 0;
+    if (pileOuFace === "pile") {
+        result = 0;
+    }
+    else if(pileOuFace === "face"){
+        result = 1;
+    }
+    else{
+        alert("Vous n'avez pas entré pile ou face ! Vous devez tous recommencer !")
+        console.error("Ni pile, ni face !");
+        window.location.reload();
+    }
     var random = Math.floor(Math.random() * 2);
-    if (random === 0) {
+    if (random === result) {
         alert("Vous avez gagné ! Votre message a bien été envoyé !");
     }
     else{
@@ -60,5 +80,8 @@ document.getElementById("submitBtn").addEventListener("click", function() {
 document.getElementById("usrnInp").addEventListener("input", validateForm);
 document.getElementById("emailInp").addEventListener("input", validateForm);
 document.getElementById("textarea1Inp").addEventListener("input", validateForm);
+
+//Appeler la fonction validateForm au chargement de la page
+validateForm();
 
 console.log("contacts.js chargé !");

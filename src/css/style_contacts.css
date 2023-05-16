@@ -25,10 +25,11 @@ img{
 
 .icon {
   padding: 10px;
-  background: #7D7D7D;
+  background: #e9ecef;
   width: 50px;
   height: auto;
   text-align: center;
+  border-radius: 3px;
 }
 
 .input-field {
