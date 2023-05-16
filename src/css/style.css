@@ -19,6 +19,8 @@ img{
 .actu{
     background-color: #D9D9D9;
     list-style-type: none;
+    padding-left: 5px;
+    padding-right: 5px;
 }
 #img_analyse{
     width: 500px;

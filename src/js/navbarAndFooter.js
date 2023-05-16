@@ -1,12 +1,15 @@
+//Définir les variables
 const burger = document.querySelector('.burger-menu');
 const menu = document.querySelector('.menu');
 
 burger.onclick = function() {
+    //Afficher ou cache le menu
     menu.classList.toggle('show-menu');
 };
 
 
 function updateTime() {
+    //Afficher l'heure actuelle
     setInterval(function() {var now = new Date();
         var hours = now.getHours();
         var minutes = now.getMinutes();
@@ -17,6 +20,7 @@ function updateTime() {
 }
 
 function startTimer() {
+    //Afficher le temps écoulé sur la page
     var startTime = Date.now();
     setInterval(function() {
         var elapsedTime = Date.now() - startTime;
@@ -29,6 +33,7 @@ function startTimer() {
 }
 
 document.addEventListener("click", function(event) {
+    //Afficher une alerte si on clique sur le bouton "Membres"
     if (event.target.id === "membresNav"){
         const confirmation = confirm('Voulez vous vraiment aller sur la page membres?');
         if (confirmation === true) {
@@ -40,22 +45,22 @@ document.addEventListener("click", function(event) {
     }
 });
 
+//Récupérer les éléments du menu
 const menuItems = document.querySelectorAll('.menu li');
 
 menuItems.forEach((menuItem) => {
+    //Récupérer la couleur de fond originale
     const originalBgColor = menuItem.style.backgroundColor;
     console.log(originalBgColor)
     menuItem.addEventListener('mouseover', () => {
-        const newBgColor = '';
+        //Récupérer la nouvelle couleur de fond
+        const newBgColor = menuItem.dataset.color;
         menuItem.style.backgroundColor = newBgColor;
-        console.log(`L'ancienne couleur de fond était ${originalBgColor}, la nouvelle couleur est ${newBgColor}.`);
-    });
-
-    menuItem.addEventListener('mouseout', () => {
-        menuItem.style.backgroundColor = originalBgColor;
+        console.log("L'ancienne couleur de fond était " + originalBgColor + " et la nouvelle est " + newBgColor + ".")
     });
 });
 
+//Lance les fonctions updateTime et startTimer
 updateTime();
 startTimer();
 
@@ -73,10 +78,12 @@ let phoneNumbers = document.querySelectorAll('a.telFooter');
 phoneNumbers.forEach(function(phoneNumber) {
     console.log(phoneNumber);
     phoneNumber.addEventListener('copy', function(event) {
+        // On récupère le numéro de téléphone
         let copiedText = event.clipboardData.getData('text/plain');
         console.log(copiedText);
+        // On demande à l'utilisateur de confirmer qu'il veut appeler ce numéro
         let input = prompt('Si vous voulez appeler ce numéro : ' + copiedText + ', entrez le de nouveau dans le champ ci-dessous puis validez');
-        if (input === copiedText){
+        if (input === copiedText){ // Si l'utilisateur a entré le numéro de téléphone correctement
             console.log("Vous appelez ce numéro : " + copiedText);
             let audio = new Audio('/src/sound/sonnerie.mp3');
             audio.play();
