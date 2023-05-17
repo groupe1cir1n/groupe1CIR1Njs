@@ -1,11 +1,13 @@
-import { zoom } from "./index.js";
+import { zoom, displayWord } from "./index.js";
 
 function main() {
+    const intervalId = setInterval(displayWord, 1000);
     var imgAnalyse = document.getElementById("img_analyse");
     zoom(imgAnalyse);
-    imgAnalyse.addEventListener("mouseover", function() {
+    imgAnalyse.addEventListener("click", function(){
         zoom(imgAnalyse);
     });
+    alert("Hello World!");
 }
 
 main();
