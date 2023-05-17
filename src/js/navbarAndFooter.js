@@ -53,7 +53,7 @@ menuItems.forEach((menuItem) => {
         let originalBgColor = getComputedStyle(menuItem).backgroundColor;
         let newBgColor = "rgb(49, 65, 83)";
         menuItem.style.backgroundColor = newBgColor;
-        console.log("L'ancienne couleur de fond était " + originalBgColor + " et la nouvelle est " + newBgColor + ".")
+        console.info("L'ancienne couleur de fond était " + originalBgColor + " et la nouvelle est " + newBgColor + ".")
     });
     menuItem.addEventListener('mouseout', () => {
         menuItem.style.backgroundColor = "";
