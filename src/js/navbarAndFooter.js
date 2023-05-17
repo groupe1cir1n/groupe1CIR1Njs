@@ -11,10 +11,10 @@ burger.onclick = function() {
 function updateTime() {
     //Afficher l'heure actuelle
     setInterval(function() {var now = new Date();
-        var hours = now.getHours();
-        var minutes = now.getMinutes();
-        var seconds = now.getSeconds();
-        var timeString = hours + ":" + minutes + ":" + seconds;
+        let hours = now.getHours();
+        let minutes = now.getMinutes();
+        let seconds = now.getSeconds();
+        let timeString = hours + ":" + minutes + ":" + seconds;
         document.getElementById("hour").innerHTML = timeString;
     });
 }
