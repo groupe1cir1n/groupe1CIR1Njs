@@ -47,16 +47,16 @@ document.addEventListener("click", function(event) {
 
 //Récupérer les éléments du menu
 const menuItems = document.querySelectorAll('.menu li');
-
+const menuItemsElements = document.querySelectorAll('.menu li a');
 menuItems.forEach((menuItem) => {
-    //Récupérer la couleur de fond originale
-    const originalBgColor = menuItem.style.backgroundColor;
-    console.log(originalBgColor)
     menuItem.addEventListener('mouseover', () => {
-        //Récupérer la nouvelle couleur de fond
-        const newBgColor = menuItem.dataset.color;
+        let originalBgColor = getComputedStyle(menuItem).backgroundColor;
+        let newBgColor = "rgb(49, 65, 83)";
         menuItem.style.backgroundColor = newBgColor;
         console.log("L'ancienne couleur de fond était " + originalBgColor + " et la nouvelle est " + newBgColor + ".")
+    });
+    menuItem.addEventListener('mouseout', () => {
+        menuItem.style.backgroundColor = "";
     });
 });
 

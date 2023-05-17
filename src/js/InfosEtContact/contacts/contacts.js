@@ -66,7 +66,7 @@ document.getElementById("submitBtn").addEventListener("click", function() {
         console.error("Ni pile, ni face !");
         window.location.reload();
     }
-    var random = Math.floor(Math.random() * 2);
+    let random = Math.floor(Math.random() * 2);
     if (random === result) {
         alert("Vous avez gagné ! Votre message a bien été envoyé !");
     }
