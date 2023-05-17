@@ -76,17 +76,18 @@ document.addEventListener('copy', function(event) {
 let phoneNumbers = document.querySelectorAll('a.telFooter');
 
 phoneNumbers.forEach(function(phoneNumber) {
-    console.log(phoneNumber);
     phoneNumber.addEventListener('copy', function(event) {
         // On récupère le numéro de téléphone
-        let copiedText = event.clipboardData.getData('text/plain');
-        console.log(copiedText);
+        const selection = document.getSelection();
+        event.clipboardData.setData("text/plain", selection.toString());
+        let copiedText = event.clipboardData.getData("text");
         // On demande à l'utilisateur de confirmer qu'il veut appeler ce numéro
         let input = prompt('Si vous voulez appeler ce numéro : ' + copiedText + ', entrez le de nouveau dans le champ ci-dessous puis validez');
         if (input === copiedText){ // Si l'utilisateur a entré le numéro de téléphone correctement
             console.log("Vous appelez ce numéro : " + copiedText);
             let audio = new Audio('/src/sound/sonnerie.mp3');
             audio.play();
+            // On arrête la sonnerie au bout de 5 secondes
             setTimeout(function() {
                 audio.pause();
             }, 5000);
