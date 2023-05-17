@@ -27,6 +27,11 @@ img{
     height: 330px;
 }
 
+#img_analyse:hover{
+    width: 1000px;
+    height: 660px;
+}
+
 .secondary{
     display: flex;
     flex-direction: column;
