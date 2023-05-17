@@ -55,10 +55,10 @@ document.getElementById("submitBtn").addEventListener("click", function() {
     //Pile ou face
     let pileOuFace = prompt("Pile ou face ?");
     let result = 0;
-    if (pileOuFace === "pile") {
+    if (pileOuFace.toLowerCase() === "pile") {
         result = 0;
     }
-    else if(pileOuFace === "face"){
+    else if(pileOuFace.toLowerCase() === "face"){
         result = 1;
     }
     else{
