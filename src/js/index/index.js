@@ -1,15 +1,18 @@
-const textElement = document.getElementById("who_we_are");
-const words = textElement.textContent.trim().split(" ");
-let currentIndex = 0;
-
 function displayWord() {
-  textElement.textContent = words[currentIndex];
-  currentIndex++;
-  if (currentIndex >= words.length) {
-    currentIndex = 0;
-  }
+  const words = document.getElementById('who_we_are').textContent.trim().split(' ');
+
+  words.forEach((word, index) => {
+    const wordElement = document.createElement('span');
+    wordElement.classList.add('word');
+    wordElement.innerText = word;
+    wordElement.style.transitionDelay = `${index * 100}ms`;
+    document.getElementById('who_we_are').appendChild(wordElement);
+
+    setTimeout(() => {
+      wordElement.classList.add('show');
+    }, 100);
+  });
 }
 
-
-
-export { zoom, displayWord };
+ 
+export { displayWord };
