@@ -30,6 +30,16 @@ img{
     height: 100px;
 }
 
+.carteButton{
+    background-color: #515c3a;
+    color: white;
+    width: 30%;
+    height: auto;
+    border-radius: 10px;
+    border: none;
+    padding: 5px;
+}
+
 @media (max-width: 1200px) {
     #main{
         flex-direction: column;
