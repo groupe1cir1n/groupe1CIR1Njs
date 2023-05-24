@@ -168,7 +168,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     condition: data.weather[0].description
                 };
 
-                document.getElementById(elementId).innerHTML = `Météo à ${city} : ${weatherData.temperature}°C, ${weatherData.condition}`;
+                document.getElementById(elementId).innerHTML = `<h2>Météo à ${city} :</h2> ${weatherData.temperature}°C, ${weatherData.condition}`;
             })
             .catch(error => {
                 console.log('Une erreur s\'est produite :', error);
@@ -176,9 +176,9 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     // Appeler la fonction pour chaque ville
-    getWeather('Brest', 'weatherWidgetBrest');
-    getWeather('Nantes', 'weatherWidgetNantes');
-    getWeather('Rennes', 'weatherWidgetRennes');
-    getWeather('Caen', 'weatherWidgetCaen');
+    getWeather('Brest', 'weatherBrest');
+    getWeather('Nantes', 'weatherNantes');
+    getWeather('Rennes', 'weatherRennes');
+    getWeather('Caen', 'weatherCaen');
 });
 
