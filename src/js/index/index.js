@@ -27,7 +27,7 @@ function displayWord() {
 
     setTimeout(() => {
       wordElement.classList.add('show');
-    }, 100);
+    }, 1000);
   });
 }
 
