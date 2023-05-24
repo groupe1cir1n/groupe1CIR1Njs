@@ -3,6 +3,7 @@
  <head>
    <meta charset="utf-8">
    <title> Plan </title>
+   <link rel="icon" href="/src/img/icon.png" type="image/x-icon">
    <script src="/src/js/navbarAndFooter.js" defer></script>
    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
    <script src="https://kit.fontawesome.com/5b8b37978c.js" crossorigin="anonymous"></script>
@@ -48,125 +49,49 @@
         <h1 class="titre">Brest:</h1>
         <h2>Météo a Brest:</h2>
           <div class="weatherWidgetBrest" ></div>
-
-          <script>
-              window.weatherWidgetConfig =  window.weatherWidgetConfig || [];
-              window.weatherWidgetConfig.push({
-                  selector:".weatherWidgetBrest",
-                  apiKey:"HSXAUKHU5AF2ER6WJAL8CBKSF", //Sign up for your personal key
-                  location:"Brest, FR", //Enter an address
-                  unitGroup:"metric", //"us" or "metric"
-                  forecastDays:5, //how many days forecast to show
-                  title:"", //optional title to show in the
-                  showTitle:true,
-                  showConditions:true
-              });
-
-              (function() {
-                  var d = document, s = d.createElement('script');
-                  s.src = 'https://www.visualcrossing.com/widgets/forecast-simple/weather-forecast-widget-simple.js';
-                  s.setAttribute('data-timestamp', +new Date());
-                  (d.head || d.body).appendChild(s);
-              })();
-          </script>
         <h1 class="titre">Venir en train + bus:</h1>
         <p class="text">A partir de la gare de Brest, prendre le bus 03 en direction Lambézellecde Gouesnou à l’arrêt Gambetta Gare jusqu'à l’arrêt Gay Lussac.</p><br>
         <h1 class="titre">Venir en voiture:</h1>
         <p class="text">En arrivant de Rennes (D112): Au rond point, prendre la 2e sortie puis au rond point suivant, prendre la 1ère sortie, puis prendre la 1 à gauche, puis tourner immédiatement à droite, au rond point prendre la 2e sortie. Vous êtes arrivé !</p>
-        <div style="max-width:100%;overflow:hidden;color:red;width:100%;height:100%;"><div id="my-map-canvas" style="height:100%; width:100%;max-width:100%;"><iframe style="height:100%;width:100%;border:0;" frameborder="0" src="https://www.google.com/maps/embed/v1/place?q=ISEN+Brest.+Institut+Supérieur+de+l'Electronique+et+du+Numérique,+Rue+Cuirassé+Bretagne,+Brest,+France&key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8"></iframe></div><style>#my-map-canvas img.text-marker{max-width:none!important;background:none!important;}img{max-width:none}</style></div>
+        <div style="max-width:100%;overflow:hidden;color:red;width:100%;height:100%;"><div id="my-map-canvasBrest" style="height:100%; width:100%;max-width:100%;"><iframe style="height:100%;width:100%;border:0;" frameborder="0" src="https://www.google.com/maps/embed/v1/place?q=ISEN+Brest.+Institut+Supérieur+de+l'Electronique+et+du+Numérique,+Rue+Cuirassé+Bretagne,+Brest,+France&key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8"></iframe></div><style>#my-map-canvas img.text-marker{max-width:none!important;background:none!important;}img{max-width:none}</style></div>
+        <button id="distanceBrestButton" class="carteButton">Calculer la distance !</button>
+        <div id="distanceBrest"></div>
       </div>
       <div id="Nantes">
         <h1 class="titre">Nantes:</h1>
           <h2>Météo a Nantes:</h2>
           <div class="weatherWidgetNantes" ></div>
-
-          <script>
-              window.weatherWidgetConfig =  window.weatherWidgetConfig || [];
-              window.weatherWidgetConfig.push({
-                  selector:".weatherWidgetNantes",
-                  apiKey:"HSXAUKHU5AF2ER6WJAL8CBKSF", //Sign up for your personal key
-                  location:"Nantes, FR", //Enter an address
-                  unitGroup:"metric", //"us" or "metric"
-                  forecastDays:5, //how many days forecast to show
-                  title:"", //optional title to show in the
-                  showTitle:true,
-                  showConditions:true
-              });
-
-              (function() {
-                  var d = document, s = d.createElement('script');
-                  s.src = 'https://www.visualcrossing.com/widgets/forecast-simple/weather-forecast-widget-simple.js';
-                  s.setAttribute('data-timestamp', +new Date());
-                  (d.head || d.body).appendChild(s);
-              })();
-          </script>
         <h1 class="titre">Venir en train + bus:</h1>
         <p class="text">A partir de la gare de Nantes, prendre le tram 1 en direction Beaujoire à l’arrêt Gare Nord jusqu'à l’arrêt Halvêque puis rejoindre l’arrêt de bus Boulodrome Halvêque de la ligne 95. Descendre à l’arrêt ICAM puis marcher jusqu’au campus.</p><br>
         <h1 class="titre">Venir en voiture:</h1>
         <p class="text">Le campus propose un parking ouvert accessible aux étudiants mais ce parking est rapidement saturé. On vous conseille de privilégier d’ autres moyens de transport : il y a des bus et un parking à vélos ! <br>A partir de l’A11:<br> En venant de Rennes: prendre la sortie 23. Au 1er rond-point prendre la 5e sortie, au rond-point suivant prendre la 2e sortie puis suivre le fléchage ICAM.<br> En venant de Nantes: prendre la sortie 24. Au 1er rond-point prendre la 1ère sortie, puis au 3 rond-point suivant prendre tout droit puis suivre le fléchage ICAM.</p>
-        <div style="max-width:100%;overflow:hidden;color:red;width:100%;height:100%;"><div id="my-map-canvas" style="height:100%; width:100%;max-width:100%;"><iframe style="height:100%;width:100%;border:0;" frameborder="0" src="https://www.google.com/maps/embed/v1/place?q=ISEN+Nantes,+Avenue+du+Champ+de+Manœuvre,+Carquefou,+France&key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8"></iframe></div><style>#my-map-canvas img.text-marker{max-width:none!important;background:none!important;}img{max-width:none}</style></div>
+        <div style="max-width:100%;overflow:hidden;color:red;width:100%;height:100%;"><div id="my-map-canvasNantes" style="height:100%; width:100%;max-width:100%;"><iframe style="height:100%;width:100%;border:0;" frameborder="0" src="https://www.google.com/maps/embed/v1/place?q=ISEN+Nantes,+Avenue+du+Champ+de+Manœuvre,+Carquefou,+France&key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8"></iframe></div><style>#my-map-canvas img.text-marker{max-width:none!important;background:none!important;}img{max-width:none}</style></div>
+        <button id="distanceNantesButton" class="carteButton">Calculer la distance !</button>
+        <div id="distanceNantes"></div>
       </div>
       <div id="Rennes">
         <h1 class="titre">Rennes:</h1>
           <h2>Météo a Rennes:</h2>
           <div class="weatherWidgetRennes" ></div>
-
-          <script>
-              window.weatherWidgetConfig =  window.weatherWidgetConfig || [];
-              window.weatherWidgetConfig.push({
-                  selector:".weatherWidgetRennes",
-                  apiKey:"HSXAUKHU5AF2ER6WJAL8CBKSF", //Sign up for your personal key
-                  location:"Rennes, FR", //Enter an address
-                  unitGroup:"metric", //"us" or "metric"
-                  forecastDays:5, //how many days forecast to show
-                  title:"", //optional title to show in the
-                  showTitle:true,
-                  showConditions:true
-              });
-
-              (function() {
-                  var d = document, s = d.createElement('script');
-                  s.src = 'https://www.visualcrossing.com/widgets/forecast-simple/weather-forecast-widget-simple.js';
-                  s.setAttribute('data-timestamp', +new Date());
-                  (d.head || d.body).appendChild(s);
-              })();
-          </script>
         <h1 class="titre">Venir en train + bus:</h1>
         <p class="text">A partir de la gare de Rennes, prendre le bus C4 en direction Grand Quartier à l’arrêt Musée Beaux Arts jusqu'à l’arrêt Préfecture puis marcher jusqu’au campus.</p><br>
         <h1 class="titre">Venir en voiture:</h1>
         <p class="text">L’ISEN est présent sur le campus de Rennes School of Buisness.<br>En venant de Saint-Malo (D137): Au rond-point prendre la 1ère sortie, au rond-point suivant prendre la 2e sortie puis au rond-point prendre la 3e sortie. Au rond-point suivant prendre la 2e sortie puis enfin prendre la 3e sortie. <br>En venant de Paris: Prendre la rocade est, puis sortir a la porte de Beauregard (sortie 13a), puis suivre les mêmes instructions que pour Saint-Malo</p>
-        <div style="max-width:100%;overflow:hidden;color:red;width:100%;height:100%;"><div id="my-map-canvas" style="height:100%; width:100%;max-width:100%;"><iframe style="height:100%;width:100%;border:0;" frameborder="0" src="https://www.google.com/maps/embed/v1/place?q=ISEN+Rennes,+Rue+Robert+d'Arbrissel,+Rennes,+France&key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8"></iframe></div><style>#my-map-canvas img.text-marker{max-width:none!important;background:none!important;}img{max-width:none}</style></div>
+        <div style="max-width:100%;overflow:hidden;color:red;width:100%;height:100%;"><div id="my-map-canvasRennes" style="height:100%; width:100%;max-width:100%;"><iframe style="height:100%;width:100%;border:0;" frameborder="0" src="https://www.google.com/maps/embed/v1/place?q=ISEN+Rennes,+Rue+Robert+d'Arbrissel,+Rennes,+France&key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8"></iframe></div><style>#my-map-canvas img.text-marker{max-width:none!important;background:none!important;}img{max-width:none}</style></div>
+        <button id="distanceRennesButton" class="carteButton">Calculer la distance !</button>
+        <div id="distanceRennes"></div>
       </div>
       <div id="Caen">
         <h1 class="titre">Caen:</h1>
           <h2>Météo a Caen:</h2>
           <div class="weatherWidgetCaen" ></div>
-
-          <script>
-              window.weatherWidgetConfig =  window.weatherWidgetConfig || [];
-              window.weatherWidgetConfig.push({
-                  selector:".weatherWidgetCaen",
-                  apiKey:"HSXAUKHU5AF2ER6WJAL8CBKSF", //Sign up for your personal key
-                  location:"Caen, FR", //Enter an address
-                  unitGroup:"metric", //"us" or "metric"
-                  forecastDays:5, //how many days forecast to show
-                  title:"", //optional title to show in the
-                  showTitle:true,
-                  showConditions:true
-              });
-
-              (function() {
-                  var d = document, s = d.createElement('script');
-                  s.src = 'https://www.visualcrossing.com/widgets/forecast-simple/weather-forecast-widget-simple.js';
-                  s.setAttribute('data-timestamp', +new Date());
-                  (d.head || d.body).appendChild(s);
-              })();
-          </script>
         <h1 class="titre">Venir en train + bus:</h1>
         <p class="text">A partir de la gare de Caen, prendre le tram 1 en direction HEROUVILLE St-Clair à l’arrêt Gare SNCF jusqu'à l’arrêt Bernières, Caen puis marcher jusqu’au campus.</p><br>
         <h1 class="titre">Venir en voiture:</h1>
         <p class="text">A partir de l’A84: Prendre le périphérique sud puis sortir a la sortie 5, tournez a droite a la 6e rue, puis prendre la 1ère a droite.<br>En venant de l’A13: Prendre le périphérique nord puis la sortie 4. Au rond point prendre la 3e sortie, puis au suivant la 1ère sortie puis prendre la 3e a droite, au bout tourner à gauche, continuez tous droit jusqu’a l’ISEN.</p>
-        <div style="max-width:100%;overflow:hidden;color:red;width:100%;height:100%;"><div id="my-map-canvas" style="height:100%; width:100%;max-width:100%;"><iframe style="height:100%;width:100%;border:0;" frameborder="0" src="https://www.google.com/maps/embed/v1/place?q=ISEN+Caen,+Avenue+Croix+Guérin,+Caen,+France&key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8"></iframe></div><style>#my-map-canvas img.text-marker{max-width:none!important;background:none!important;}img{max-width:none}</style></div>
+        <div style="max-width:100%;overflow:hidden;color:red;width:100%;height:100%;"><div id="my-map-canvasCaen" style="height:100%; width:100%;max-width:100%;"><iframe style="height:100%;width:100%;border:0;" frameborder="0" src="https://www.google.com/maps/embed/v1/place?q=ISEN+Caen,+Avenue+Croix+Guérin,+Caen,+France&key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8"></iframe></div><style>#my-map-canvas img.text-marker{max-width:none!important;background:none!important;}img{max-width:none}</style></div>
+        <button id="distanceCaenButton" class="carteButton">Calculer la distance !</button>
+        <div id="distanceCaen"></div>
       </div>
     </div>
     <footer>
