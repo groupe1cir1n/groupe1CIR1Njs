@@ -12,6 +12,14 @@ img{
     height: 20px;
 }
 
+#entry_text{
+    text-align: center;
+}
+
+.highlight {
+    background-color: yellow;
+}
+
 .publi{
     display: flex;
     flex-direction: column;
