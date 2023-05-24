@@ -19,9 +19,6 @@ function displayWord() {
       document.getElementById('who_we_are').appendChild(spaceElement);
     }
 
-    // Vérifier s'il y a un élément <br> dans le texte
-
-
     setTimeout(() => {
       wordElement.classList.add('show');
     }, 100);
