@@ -16,10 +16,6 @@ img{
     text-align: center;
 }
 
-.highlight {
-    background-color: yellow;
-}
-
 .publi{
     display: flex;
     flex-direction: column;
