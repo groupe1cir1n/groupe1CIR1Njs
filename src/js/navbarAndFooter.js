@@ -5,6 +5,7 @@ const menu = document.querySelector('.menu');
 burger.onclick = function() {
     //Afficher ou cache le menu
     menu.classList.toggle('show-menu');
+    showMenuItems();
 };
 
 
@@ -59,6 +60,15 @@ menuItems.forEach((menuItem) => {
         menuItem.style.backgroundColor = "";
     });
 });
+
+//Fonction pour l'annimation du menu
+function showMenuItems() {
+    menuItems.forEach((item, index) => {
+        setTimeout(() => {
+            item.classList.add('animate');
+        }, index * 100); // Délai progressif de 100 ms entre chaque élément
+    });
+}
 
 //Lance les fonctions updateTime et startTimer
 updateTime();

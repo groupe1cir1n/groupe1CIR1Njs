@@ -26,12 +26,20 @@ nav {
   padding: 10px;
   margin-top: 20px;
   margin-left: 10px;
+  transition: 0.3s ease-out;
 }
 
 .menu li {
   margin: 10px 0;
   list-style: none;
   background-color: #48435c;
+  opacity: 0;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.menu li.animate {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .menu li a {
@@ -48,4 +56,3 @@ nav {
   max-width: 25%;
   height: auto;
 }
-
