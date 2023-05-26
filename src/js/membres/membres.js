@@ -221,7 +221,7 @@ function addMember() {
 
     newCard.appendChild(CardHover);
 
-    //Ajoout du bouton supprimer
+    //Ajout du bouton supprimer
     const deleteButton = document.createElement('button');
     deleteButton.innerText = 'Supprimer';
     deleteButton.id = 'deleteButton';
