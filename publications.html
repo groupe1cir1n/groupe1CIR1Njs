@@ -45,10 +45,26 @@
    <div id="hour"></div>
  </nav>
  <div id="allButton">
-  <button class="button" onclick="revue()">Article de revue</button>
-  <button class="button" onclick="communication()">Communication</button>
-  <button class="button" onclick="reset()">Toutes</button>
-  <input type="text" id="entry_text" placeholder="Saisir texte" onkeypress="search(event)">
+  <fieldset>
+    <legend>Choisir ce que vous souhaitez voir</legend>
+
+    <div>
+      <input type="radio" onclick="revue()" name="drone" value="huey"
+             checked>
+      <label>Revue</label>
+    </div>
+
+    <div>
+      <input type="radio" onclick="communication()" name="drone" value="dewey">
+      <label>Communication</label>
+    </div>
+
+    <div>
+      <input type="radio" onclick="reset()" name="drone" value="louie">
+      <label>Toutes</label>
+    </div>
+</fieldset>
+<input type="text" id="entry_text" placeholder="Saisir texte" onkeypress="search(event)">
   <button class="button" id="search_button" onclick="search(event)">Rechercher</button>
 </div>
  <div class="publi">
