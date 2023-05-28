@@ -24,7 +24,16 @@ function displayWord() {
     }, 1000);
   });
 }
+function slide(element, distance, duration, delay) {
+  element.style.transform = `translateX(-${distance}px)`;
+  element.style.transition = `transform ${duration}ms ease ${delay}ms`;
 
+  setTimeout(() => {
+    element.style.transform = 'translateX(0)';
+  }, 0);
+}
+const element = document.getElementById('myElement');
+slide(element, 100, 500, 200);
 displayWord();
 
 
