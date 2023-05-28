@@ -48,8 +48,8 @@
   <button class="button" onclick="revue()">Article de revue</button>
   <button class="button" onclick="communication()">Communication</button>
   <button class="button" onclick="reset()">Toutes</button>
-  <input type="text" id="entry_text" placeholder="Saisir texte">
-  <button class="button" id="search_button" onclick="search()">Rechercher</button>
+  <input type="text" id="entry_text" placeholder="Saisir texte" onkeypress="search(event)">
+  <button class="button" id="search_button" onclick="search(event)">Rechercher</button>
 </div>
  <div class="publi">
     <p><img src="src/img/publications/pink square.png" alt="pink square" class="squares">
