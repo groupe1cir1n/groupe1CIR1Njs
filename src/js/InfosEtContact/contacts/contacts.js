@@ -51,6 +51,7 @@ function validateForm() {
     }
 }
 
+
 document.getElementById("submitBtn").addEventListener("click", function() {
     //Pile ou face
     let pileOuFace = prompt("Pile ou face ?");

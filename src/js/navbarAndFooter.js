@@ -22,13 +22,17 @@ function updateTime() {
 
 function startTimer() {
     //Afficher le temps écoulé sur la page
-    var startTime = Date.now();
+    let startTime = Date.now();
     setInterval(function() {
-        var elapsedTime = Date.now() - startTime;
-        var seconds = Math.floor(elapsedTime / 1000);
-        var minutes = Math.floor(seconds / 60);
-        var hours = Math.floor(minutes / 60);
-        var timerString = hours + ":" + minutes + ":" + seconds % 60;
+        let elapsedTime = Date.now() - startTime;
+        let seconds = Math.floor(elapsedTime / 1000);
+        let minutes = Math.floor(seconds / 60);
+        let hours = Math.floor(minutes / 60);
+        // Si le temps écoulé est supérieur à 59 minutes on remet les minutes à 0
+        if (minutes > 59) {
+            minutes = minutes - 60;
+        }
+        let timerString = hours + ":" + minutes + ":" + seconds % 60;
         document.getElementById("chrono").innerHTML = "Temps écoulé sur la page: " + timerString;
     }, 1000);
 }
