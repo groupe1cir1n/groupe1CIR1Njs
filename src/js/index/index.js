@@ -24,16 +24,17 @@ function displayWord() {
     }, 1000);
   });
 }
-function slide(element, distance, duration, delay) {
-  element.style.transform = `translateX(-${distance}px)`;
-  element.style.transition = `transform ${duration}ms ease ${delay}ms`;
 
-  setTimeout(() => {
-    element.style.transform = 'translateX(0)';
+function slide(element, distance, duration, delay) {
+  element.style.transform = `translateX(-${distance}px)`;   // Déplacer l'élément vers la gauche
+  element.style.transition = `transform ${duration}ms ease ${delay}ms`;   // Ajouter une transition
+
+  setTimeout(() => {  // Remettre l'élément à sa position initiale
+    element.style.transform = 'translateX(0)';  // Déplacer l'élément vers la gauche
   }, 0);
 }
-const element = document.getElementById('myElement');
-slide(element, 100, 500, 200);
+const element = document.getElementById('LabHidden');   // Récupérer l'élément à animer
+slide(element, 100, 500, 200);  
 displayWord();
 
 
