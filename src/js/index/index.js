@@ -24,6 +24,7 @@ function displayWord() {
     }, 1000);
   });
 }
+
 /*
 function slide(element, distance, duration, delay) {
   element.style.transform = `translateX(-${distance}px)`;   // Déplacer l'élément vers la gauche
@@ -38,15 +39,41 @@ displayWord();
 slide(element, 100, 500, 200); 
 */
 
-function slide(element, distance, duration, delay) {
-  element.style.transform = `translateX(-${distance}px)`;   // Déplacer l'élément vers la gauche
-  element.style.transition = `transform ${duration}ms ease ${delay}ms`;   // Ajouter une transition
+function slide({ timing, draw, duration }) {
+  const start = performance.now();
 
-  setTimeout(() => {  // Remettre l'élément à sa position initiale
-    element.style.transform = 'translateX(0)';  // Déplacer l'élément vers la gauche
-    element.style.transition = '';  // Supprimer la transition pour le réinitialiser
-  }, duration + delay);
+  requestAnimationFrame(function animate(time) {
+    // timeFraction passe de 0 à 1
+    let timeFraction = (time - start) / duration;
+    if (timeFraction > 1) timeFraction = 1;
+
+    // Calculer l'état courant de l'animation
+    const progress = timing(timeFraction);
+
+    draw(progress); // Dessinez-le
+
+    if (timeFraction < 1) {
+      requestAnimationFrame(animate);
+    }
+  });
 }
 
+function draw(progress) {
+  const train = document.getElementById('train');
+  train.style.left = progress + 'px';
+}
+
+// Appel de la fonction displayWord
 displayWord();
-slide(document.getElementById('LabHidden'), 100, 500, 200);  // Appliquer l'effet de slide au mot
+
+setTimeout(() => {
+  slide({
+    timing: function(timeFraction) {
+      return timeFraction; // Utilisation du timing linéaire par défaut
+    },
+    draw: draw,
+    duration: 2000 // Durée de l'animation en millisecondes
+  });
+}, 1000); // Temps d'attente pour que l'animation des mots soit terminée (ajustez si nécessaire)
+
+
