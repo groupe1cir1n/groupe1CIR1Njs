@@ -59,7 +59,7 @@ function slide({ timing, draw, duration }) {
 }
 
 function draw(progress) {
-  const train = document.getElementById('train');
+  const train = document.getElementById('lahidden');
   train.style.left = progress + 'px';
 }
 
