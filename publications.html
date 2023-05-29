@@ -49,38 +49,39 @@
     <legend>Choisir ce que vous souhaitez voir</legend>
 
     <div>
-      <input type="radio" onclick="revue()" name="drone" value="huey"
-             checked>
+      <input id="revue" type="radio" onclick="revue()" name="drone" checked>
       <label>Revue</label>
     </div>
 
     <div>
-      <input type="radio" onclick="communication()" name="drone" value="dewey">
+      <input id="communication" type="radio" onclick="communication()" name="drone">
       <label>Communication</label>
     </div>
 
     <div>
-      <input type="radio" onclick="reset()" name="drone" value="louie">
+      <input id="all" type="radio" onclick="reset()" name="drone">
       <label>Toutes</label>
     </div>
 </fieldset>
-<input type="text" id="entry_text" placeholder="Saisir texte" onkeypress="search(event)">
-  <button class="button" id="search_button" onclick="search(event)">Rechercher</button>
+<input type="text" id="entry_title" placeholder="Title" onkeypress="searchTitle(event)">
+<input type="text" id="entry_author" placeholder="Nom d'auteur" onkeypress="searchAuthor(event)">
+<input type="text" id="entry_date" placeholder="Date" onkeypress="searchDate(event)">
+<button class="button" id="search_button" onclick="searchTitle(event), searchAuthor(event), searchDate(event)">Rechercher</button>
 </div>
  <div class="publi">
     <p><img src="src/img/publications/pink square.png" alt="pink square" class="squares">
-      Sébastien Puma Emmanuel Sander Matthieu Saumard Isabelle Barbet Aurélien Latouche.<strong> Reconsidering conceptual knowledge: Heterogeneity of its components.</strong> Journal of Experimental Child Psychology, 2023, 227, pp.105587.
+      <span class="author">Sébastien Puma Emmanuel Sander Matthieu Saumard Isabelle Barbet Aurélien Latouche.</span><strong><span class="title"> Reconsidering conceptual knowledge: Heterogeneity of its components.</span></strong> Journal of Experimental Child Psychology,<span class="date"> 2023</span>, 227, pp.105587.
     </p>
     <p><img src="src/img/publications/blue square.png" alt="blue square" class="squares">
-      Ayoub Karine , Thibault Napoléon , Maher Jridi. <strong>Semantic Images Segmentation for autonomous driving using Self-Attention Knowledge Distillation.</strong> <font color="#727272">16TH IEEE INTERNATIONAL CONFERENCE ON SIGNAL IMAGE TECHNOLOGY & INTERNET BASED SYSTEMS, Oct 2022, Dijon, France</font>.  
+      <span class="author">Ayoub Karine , Thibault Napoléon , Maher Jridi.</span> <strong><span class="title">Semantic Images Segmentation for autonomous driving using Self-Attention Knowledge Distillation.</span></strong> <font color="#727272">16TH IEEE INTERNATIONAL CONFERENCE ON SIGNAL IMAGE TECHNOLOGY & INTERNET BASED SYSTEMS,<span class="date"> Oct 2022</span>, Dijon, France</font>.  
     </p>
     <p><img src="src/img/publications/blue square.png" alt="blue square" class="squares">
-      Salima Bourbia , Ayoub Karine , Aladine Chetouani , Mohammed El Hassouni , Maher Jridi. <strong>No-reference Point Clouds Quality Assessment using Transformer and Visual Saliency.</strong> <font color="#727272">QoEVMA'22: Proceedings of the 2nd Workshop on Quality of Experience (QoE) in Visual Multimedia Applications, ACM Multimedia, Oct 2022, Lisbon, Portugal.</font>  
+      <span class="author">Salima Bourbia , Ayoub Karine , Aladine Chetouani , Mohammed El Hassouni , Maher Jridi.</span> <strong><span class="title">No-reference Point Clouds Quality Assessment using Transformer and Visual Saliency.</span></strong> <font color="#727272">QoEVMA'22: Proceedings of the 2nd Workshop on Quality of Experience (QoE) in Visual Multimedia Applications, ACM Multimedia,<span class="date"> Oct 2022</span>, Lisbon, Portugal.</font>  
     </p>
     <p><img src="src/img/publications/pink square.png" alt="pink square" class="squares">
-      Ayoub Karine , Maher Jridi , Rémi Adde , Sébastien Demousselle. <strong>CONCEPTION ET DEVELOPPEMENT D’UNE VOITURE AUTONOME.</strong> La Revue 3 E. I, 2022  </p>
+      <span class="author">Ayoub Karine , Maher Jridi , Rémi Adde , Sébastien Demousselle.</span> <strong><span class="title">CONCEPTION ET DEVELOPPEMENT D’UNE VOITURE AUTONOME.</span></strong> La Revue 3 E. I, <span class="date">2022</span>  </p>
     <p><img src="src/img/publications/pink square.png" alt="pink square" class="squares">
-      Sylvain Lefebvre , Maher Jridi. <strong>Mutualisation des Ressources IOT par Conteneurisation de Passerelle.</strong> La Revue 3 E. I, 2022, Intelligence Artificielle et Génie Électrique 2ème partie, 109, pp.69    </p>
+      <span class="author">Sylvain Lefebvre , Maher Jridi.</span> <strong><span class="title">Mutualisation des Ressources IOT par Conteneurisation de Passerelle.</span></strong> La Revue 3 E. I,<span class="date"> 2022</span>, Intelligence Artificielle et Génie Électrique 2ème partie, 109, pp.69    </p>
     </div>
     <footer>
         <div class="foot">
