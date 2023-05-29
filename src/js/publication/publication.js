@@ -1,16 +1,17 @@
-function search(event) {
+function searchTitle(event) {
   //ajout de la fonction entrée pour la recherche
   if(event.key === 'Enter'){
-    const searchInput = document.getElementById('entry_text');
+    const searchInput = document.getElementById('entry_title');
     const searchTerm = searchInput.value.trim().toLowerCase();  // on récupère le terme recherché en minuscule
     const paragraphs = document.querySelectorAll('.publi p');   // on prend tous les paragraphes
 
     for (let i = 0; i < paragraphs.length; i++) {  // boucle qui parcourt tous les paragraphes
       const paragraph = paragraphs[i];
       const paragraphText = paragraph.textContent.toLowerCase(); // on récupère le texte du paragraphe en minuscule
+      const titleSpan = paragraph.querySelector(".title"); // on recherche le span avec la classe "title" dans le paragraphe
 
-      if (paragraphText.includes(searchTerm)) {   //on cherche si le texte du paragraphe contient le terme recherché
-        paragraph.style.display = 'block';      // si oui, on affiche le paragraphe
+      if (paragraphText.includes(searchTerm) && (titleSpan && titleSpan.textContent.toLowerCase().includes(searchTerm))) {
+        paragraph.style.display = 'block';      // si le texte du paragraphe ou l'auteur correspond au terme recherché, on l'affiche
       } else {
         paragraph.style.display = 'none';    // sinon, on le cache
       }
@@ -18,7 +19,7 @@ function search(event) {
   }
   //ajout de la fonction click pour la recherche
   else{
-    const searchInput = document.getElementById('entry_text');
+    const searchInput = document.getElementById('entry_title');
     const searchTerm = searchInput.value.trim().toLowerCase();  // on récupère le terme recherché en minuscule
     const paragraphs = document.querySelectorAll('.publi p');   // on prend tous les paragraphes
 
@@ -26,8 +27,10 @@ function search(event) {
       const paragraph = paragraphs[i];
       const paragraphText = paragraph.textContent.toLowerCase(); // on récupère le texte du paragraphe en minuscule
 
-      if (paragraphText.includes(searchTerm)) {   //on cherche si le texte du paragraphe contient le terme recherché
-        paragraph.style.display = 'block';      // si oui, on affiche le paragraphe
+      const titleSpan = paragraph.querySelector(".title"); // on recherche le span avec la classe "title" dans le paragraphe
+
+      if (paragraphText.includes(searchTerm) && (titleSpan && titleSpan.textContent.toLowerCase().includes(searchTerm))) {
+        paragraph.style.display = 'block';      // si le texte du paragraphe ou l'auteur correspond au terme recherché, on l'affiche
       } else {
         paragraph.style.display = 'none';    // sinon, on le cache
       }
@@ -35,6 +38,85 @@ function search(event) {
   }
 }
 
+function searchAuthor(event) {
+  //ajout de la fonction entrée pour la recherche
+  if(event.key === 'Enter'){
+    const searchInput = document.getElementById('entry_author');
+    const searchTerm = searchInput.value.trim().toLowerCase();  // on récupère le terme recherché en minuscule
+    const paragraphs = document.querySelectorAll('.publi p');   // on prend tous les paragraphes
+
+    for (let i = 0; i < paragraphs.length; i++) {  // boucle qui parcourt tous les paragraphes
+      const paragraph = paragraphs[i];
+      const paragraphText = paragraph.textContent.toLowerCase(); // on récupère le texte du paragraphe en minuscule
+      const authorSpan = paragraph.querySelector(".author"); // on recherche le span avec la classe "author" dans le paragraphe
+
+      if (paragraphText.includes(searchTerm) && (authorSpan && authorSpan.textContent.toLowerCase().includes(searchTerm))) {
+        paragraph.style.display = 'block';      // si le texte du paragraphe ou l'auteur correspond au terme recherché, on l'affiche
+      } else {
+        paragraph.style.display = 'none';    // sinon, on le cache
+      }
+    }
+  }
+  //ajout de la fonction click pour la recherche
+  else{
+    const searchInput = document.getElementById('entry_author');
+    const searchTerm = searchInput.value.trim().toLowerCase();  // on récupère le terme recherché en minuscule
+    const paragraphs = document.querySelectorAll('.publi p');   // on prend tous les paragraphes
+
+    for (let i = 0; i < paragraphs.length; i++) {  // boucle qui parcourt tous les paragraphes
+      const paragraph = paragraphs[i];
+      const paragraphText = paragraph.textContent.toLowerCase(); // on récupère le texte du paragraphe en minuscule
+
+      const authorSpan = paragraph.querySelector(".author"); // on recherche le span avec la classe "author" dans le paragraphe
+
+      if (paragraphText.includes(searchTerm) && (authorSpan && authorSpan.textContent.toLowerCase().includes(searchTerm))) {
+        paragraph.style.display = 'block';      // si le texte du paragraphe ou l'auteur correspond au terme recherché, on l'affiche
+      } else {
+        paragraph.style.display = 'none';    // sinon, on le cache
+      }
+    }
+  }
+}
+
+function searchDate(event) {
+  //ajout de la fonction entrée pour la recherche
+  if(event.key === 'Enter'){
+    const searchInput = document.getElementById('entry_date');
+    const searchTerm = searchInput.value.trim().toLowerCase();  // on récupère le terme recherché en minuscule
+    const paragraphs = document.querySelectorAll('.publi p');   // on prend tous les paragraphes
+
+    for (let i = 0; i < paragraphs.length; i++) {  // boucle qui parcourt tous les paragraphes
+      const paragraph = paragraphs[i];
+      const paragraphText = paragraph.textContent.toLowerCase(); // on récupère le texte du paragraphe en minuscule
+      const dateSpan = paragraph.querySelector(".date"); // on recherche le span avec la classe "date" dans le paragraphe
+
+      if (paragraphText.includes(searchTerm) && (dateSpan && dateSpan.textContent.toLowerCase().includes(searchTerm))) {
+        paragraph.style.display = 'block';      // si le texte du paragraphe ou l'auteur correspond au terme recherché, on l'affiche
+      } else {
+        paragraph.style.display = 'none';    // sinon, on le cache
+      }
+    }
+  }
+  //ajout de la fonction click pour la recherche
+  else{
+    const searchInput = document.getElementById('entry_date');
+    const searchTerm = searchInput.value.trim().toLowerCase();  // on récupère le terme recherché en minuscule
+    const paragraphs = document.querySelectorAll('.publi p');   // on prend tous les paragraphes
+
+    for (let i = 0; i < paragraphs.length; i++) {  // boucle qui parcourt tous les paragraphes
+      const paragraph = paragraphs[i];
+      const paragraphText = paragraph.textContent.toLowerCase(); // on récupère le texte du paragraphe en minuscule
+
+      const dateSpan = paragraph.querySelector(".date"); // on recherche le span avec la classe "date" dans le paragraphe
+
+      if (paragraphText.includes(searchTerm) && (dateSpan && dateSpan.textContent.toLowerCase().includes(searchTerm))) {
+        paragraph.style.display = 'block';      // si le texte du paragraphe ou l'auteur correspond au terme recherché, on l'affiche
+      } else {
+        paragraph.style.display = 'none';    // sinon, on le cache
+      }
+    }
+  }
+}
 
 
 function revue(){
@@ -87,3 +169,36 @@ function reset(){
     paragraph.style.display = 'block';
   }
 }
+
+
+/*function allParameters(event){
+  const paragraphs = document.querySelectorAll('.publi p');   // on prend tous les paragraphes
+  for (let i = 0; i < paragraphs.length; i++) {  // boucle qui parcourt tous les paragraphes
+    const paragraph = paragraphs[i];
+    const paragraphText = paragraph.textContent.toLowerCase(); // on récupère le texte du paragraphe en minuscule
+
+    if(document.getElementById('all').checked){
+      if(paragraphText.searchDate(event) && paragraphText.searchAuthor(event) && paragraphText.searchTitle(event)){
+        paragraph.style.display = 'block';      // si le texte du paragraphe ou l'auteur correspond au terme recherché, on l'affiche
+      } else {
+        paragraph.style.display = 'none';    // sinon, on le cache
+      }
+    }
+    else if(document.getElementById('revue').checked){
+      if(paragraphText.searchDate(event) && paragraphText.searchAuthor(event) && paragraphText.searchTitle(event)){
+        paragraph.style.display = 'block';      // si le texte du paragraphe ou l'auteur correspond au terme recherché, on l'affiche
+      } else {
+        paragraph.style.display = 'none';    // sinon, on le cache
+      }
+    }
+    else if(document.getElementById('communication').checked){
+      if(paragraphText.searchDate(event) && paragraphText.searchAuthor(event) && paragraphText.searchTitle(event)){
+        paragraph.style.display = 'block';      // si le texte du paragraphe ou l'auteur correspond au terme recherché, on l'affiche
+      } else {
+        paragraph.style.display = 'none';    // sinon, on le cache
+      }
+    }
+  }
+}*/
+
+
