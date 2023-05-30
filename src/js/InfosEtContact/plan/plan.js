@@ -171,7 +171,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 document.getElementById(elementId).innerHTML = `<h2>Météo à ${city} :</h2> ${weatherData.temperature}°C, ${weatherData.condition}`;
             })
             .catch(error => {
-                console.log('Une erreur s\'est produite :', error);
+                console.error('Une erreur s\'est produite :', error);
             });
     }
 
