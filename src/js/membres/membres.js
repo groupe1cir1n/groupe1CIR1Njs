@@ -2,6 +2,23 @@
 let editMode = false;
 //Verifie si toute la page est chargée
 document.addEventListener('DOMContentLoaded', function() {
+    // Attends la fin du chargement des éléments modaux
+    const modals = document.querySelectorAll('.modal');
+    modals.forEach(function(modal) {
+        // Ferme la modal lorsque vous cliquez sur le bouton de fermeture
+        const closeButton = modal.querySelector('.close');
+        closeButton.addEventListener('click', function() {
+            modal.style.display = 'none';
+        });
+
+        // Ferme la modal lorsque vous cliquez en dehors de celle-ci
+        window.addEventListener('click', function(event) {
+            if (event.target === modal) {
+                modal.style.display = 'none';
+            }
+        });
+    });
+
     //Attends la fin du loader pour afficher le bouton
     setTimeout(function () {
         //Création du bouton Mode édition
@@ -30,10 +47,13 @@ document.addEventListener('DOMContentLoaded', function() {
                     editButton.style.background = '#48435C';
                     const removeMemberButton = document.getElementById('addMemberButton');
                     removeMemberButton.remove();
+                    //Appel de la fonction editName pour désactiver la modification du nom
+                    editName();
                     const MembersJS = document.querySelectorAll('.NewMembresJS')
                     MembersJS.forEach(function(element) {
                         const deleteButton = document.getElementById('deleteButton')
                         deleteButton.remove();
+
                     });
 
                 }
@@ -63,6 +83,7 @@ document.addEventListener('DOMContentLoaded', function() {
                         addMemberButton.style.cursor = 'pointer';
                         addMemberButton.addEventListener('click', function() {
                             addMember();
+                            editName();
                         });
                         document.body.appendChild(addMemberButton);
                         let MembersJS = document.querySelectorAll('.NewMembresJS')
@@ -80,6 +101,7 @@ document.addEventListener('DOMContentLoaded', function() {
                             });
                             element.appendChild(deleteButton);
                         });
+                        editName();
                     } else {
                         alert('Mot de passe du profil administrateur incorrect !');
                         console.error('Mot de passe du profil administrateur incorrect !');
@@ -232,6 +254,7 @@ function addMember() {
     //Ajout du nom de la nouvelle carte
     const memberName = document.createElement('h2');
     memberName.innerText = 'Nom du membre';
+    memberName.className = 'name';
     CardHover.appendChild(memberName);
 
     newCard.appendChild(CardHover);
@@ -273,6 +296,7 @@ function addMember() {
     //Ajoout du nom du modal
     const modalName = document.createElement('h2');
     modalName.innerText = 'Nom du membre';
+    modalName.className = 'name';
 
 
     modalHover.appendChild(modalName);
@@ -314,3 +338,17 @@ cards.forEach(function(card) {
 closeBtns.forEach(function(btn) {
     btn.addEventListener('click', closeModal);
 });
+
+function editName(){
+    const nameElements = document.querySelectorAll('.name');
+    if(editMode === true){
+        nameElements.forEach(function(nameElement){
+            nameElement.contentEditable = 'true';
+        });
+    }
+    else{
+        nameElements.forEach(function(nameElement){
+            nameElement.contentEditable = 'false';
+        });
+    }
+}
