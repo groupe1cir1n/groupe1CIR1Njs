@@ -23,6 +23,7 @@ function displayWord() {
       wordElement.classList.add('show');
     }, 1000);
   });
+  slideAndDisapear();
 }
 
 /*
@@ -39,41 +40,30 @@ displayWord();
 slide(element, 100, 500, 200); 
 */
 
-function slide({ timing, draw, duration }) {
-  const start = performance.now();
-
-  requestAnimationFrame(function animate(time) {
-    // timeFraction passe de 0 à 1
-    let timeFraction = (time - start) / duration;
-    if (timeFraction > 1) timeFraction = 1;
-
-    // Calculer l'état courant de l'animation
-    const progress = timing(timeFraction);
-
-    draw(progress); // Dessinez-le
-
-    if (timeFraction < 1) {
-      requestAnimationFrame(animate);
-    }
-  });
-}
-
-function draw(progress) {
-  const train = document.getElementById('lahidden');
-  train.style.left = progress + 'px';
+function slideAndDisapear(){
+    //Quand tout le texte est apparu, il fait une translation vers la droite puis vers la gauche avant de revenir à sa position initiale, puis tout s’efface et le cycle recommence.
+    const element = document.getElementById('who_we_are');   // Récupérer l'élément à animer
+    setTimeout(() => {  // Mettre l'élément a gauche
+        element.style.transform = 'translateX(-5%)';
+    }, 5000);
+    setTimeout(() => {  // Remettre l'élément à sa position initiale
+        element.style.transform = 'translateX(0)';
+    }, 5500);
+    setTimeout(() => {  // Mettre l'élément a droite
+        element.style.transform = 'translateX(5%)';
+    }, 6000);
+    setTimeout(() => {  // Remettre l'élément à sa position initiale
+        element.style.transform = 'translateX(0)';
+    }, 6500);
+    setTimeout(() => {
+        element.innerHTML = '';
+    }, 7000);
+    setTimeout(() => {
+        displayWord();
+    }, 7250);
 }
 
 // Appel de la fonction displayWord
 displayWord();
 
-setTimeout(() => {
-  slide({
-    timing: function(timeFraction) {
-      return timeFraction; // Utilisation du timing linéaire par défaut
-    },
-    draw: draw,
-    duration: 2000 // Durée de l'animation en millisecondes
-  });
-}, 1000); // Temps d'attente pour que l'animation des mots soit terminée (ajustez si nécessaire)
-
-
+// Appel de la fonction slide

@@ -1,25 +1,25 @@
 function validateForm() {
     //Récupérer les valeurs des champs
-    var prenomNom = document.getElementById("usrnInp").value;
-    var email = document.getElementById("emailInp").value;
-    var message = document.getElementById("textarea1Inp").value;
+    let prenomNom = document.getElementById("usrnInp").value;
+    let email = document.getElementById("emailInp").value;
+    let message = document.getElementById("textarea1Inp").value;
 
     //Définir les expressions régulières
-    var prenomNomRegex = /^[a-zA-Z]+\s[a-zA-Z]+$/;
-    var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    let prenomNomRegex = /^[a-zA-Z]+\s[a-zA-Z]+$/;
+    let emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
     //Tester les valeurs des champs avec les expressions régulières
-    var isPrenomNomValid = prenomNomRegex.test(prenomNom);
-    var isEmailValid = emailRegex.test(email);
-    var isMessageValid = message.length >= 20 && message.length <= 1000;
+    let isPrenomNomValid = prenomNomRegex.test(prenomNom);
+    let isEmailValid = emailRegex.test(email);
+    let isMessageValid = message.length >= 20 && message.length <= 1000;
     //console.log(isPrenomNomValid, isEmailValid, isMessageValid);
     //console.log(prenomNom, email, message);
 
     //Récupérer les éléments d'erreur
-    var submitBtn = document.getElementById("submitBtn");
-    var prenomNomError = document.getElementById("usrnError");
-    var emailError = document.getElementById("emailError");
-    var messageError = document.getElementById("textarea1Error");
+    let submitBtn = document.getElementById("submitBtn");
+    let prenomNomError = document.getElementById("usrnError");
+    let emailError = document.getElementById("emailError");
+    let messageError = document.getElementById("textarea1Error");
 
 
     //Afficher les messages d'erreur

@@ -65,6 +65,21 @@ document.addEventListener('DOMContentLoaded', function() {
                             addMember();
                         });
                         document.body.appendChild(addMemberButton);
+                        let MembersJS = document.querySelectorAll('.NewMembresJS')
+                        MembersJS.forEach(function(element) {
+                            //Ajout du bouton supprimer
+                            const deleteButton = document.createElement('button');
+                            deleteButton.innerText = 'Supprimer';
+                            deleteButton.id = 'deleteButton';
+                            deleteButton.addEventListener('click', function() {
+                                //Supprime le membre auquel le bouton appartient
+                                const confirmation = confirm('Voulez vous vraiment supprimer ce membre ?');
+                                if (confirmation === true) {
+                                    element.remove();
+                                }
+                            });
+                            element.appendChild(deleteButton);
+                        });
                     } else {
                         alert('Mot de passe du profil administrateur incorrect !');
                         console.error('Mot de passe du profil administrateur incorrect !');
@@ -83,8 +98,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
         'use strict';
 
-        var isDrawing, lastPoint;
-        var container    = document.getElementById('js-container'),
+        let isDrawing, lastPoint;
+        let container    = document.getElementById('js-container'),
             canvas       = document.getElementById('js-canvas'),
             canvasWidth  = canvas.width,
             canvasHeight = canvas.height,
@@ -121,14 +136,14 @@ document.addEventListener('DOMContentLoaded', function() {
         function getFilledInPixels(stride) {
             if (!stride || stride < 1) { stride = 1; }
 
-            var pixels   = ctx.getImageData(0, 0, canvasWidth, canvasHeight),
+            let pixels   = ctx.getImageData(0, 0, canvasWidth, canvasHeight),
                 pdata    = pixels.data,
                 l        = pdata.length,
                 total    = (l / stride),
                 count    = 0;
 
             // Iterate over all pixels
-            for(var i = count = 0; i < l; i += stride) {
+            for(let i = count = 0; i < l; i += stride) {
                 if (parseInt(pdata[i]) === 0) {
                     count++;
                 }
@@ -138,7 +153,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
 
         function getMouse(e, canvas) {
-            var offsetX = 0, offsetY = 0, mx, my;
+            let offsetX = 0, offsetY = 0, mx, my;
 
             if (canvas.offsetParent !== undefined) {
                 do {
@@ -171,12 +186,12 @@ document.addEventListener('DOMContentLoaded', function() {
 
             e.preventDefault();
 
-            var currentPoint = getMouse(e, canvas),
+            let currentPoint = getMouse(e, canvas),
                 dist = distanceBetween(lastPoint, currentPoint),
                 angle = angleBetween(lastPoint, currentPoint),
                 x, y;
 
-            for (var i = 0; i < dist; i++) {
+            for (let i = 0; i < dist; i++) {
                 x = lastPoint.x + (Math.sin(angle) * i) - 25;
                 y = lastPoint.y + (Math.cos(angle) * i) - 25;
                 ctx.globalCompositeOperation = 'destination-out';

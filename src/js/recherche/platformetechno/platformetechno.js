@@ -29,9 +29,9 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     function truncateText(elementId, maxLength) {
-        var element = document.getElementById(elementId);
+        let element = document.getElementById(elementId);
         if (element) {
-            var text = element.textContent.trim();
+            let text = element.textContent.trim();
             if (text.length > maxLength) {
                 return text.substring(0, maxLength) + "...";
             } else {

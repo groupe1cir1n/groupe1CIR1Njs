@@ -7,11 +7,15 @@ nav {
   color: #fff;
   padding: 20px;
   margin-bottom: 10px;
+  z-index: 999;
+  position: relative;
 }
 
 .burger-menu {
   display: block;
   cursor: pointer;
+  align-items: center;
+  margin-right: 10px;
 }
 
 .menu {

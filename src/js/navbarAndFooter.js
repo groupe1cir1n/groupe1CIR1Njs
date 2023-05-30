@@ -11,7 +11,7 @@ burger.onclick = function() {
 
 function updateTime() {
     //Afficher l'heure actuelle
-    setInterval(function() {var now = new Date();
+    setInterval(function() {let now = new Date();
         let hours = now.getHours();
         let minutes = now.getMinutes();
         let seconds = now.getSeconds();
@@ -100,6 +100,7 @@ phoneNumbers.forEach(function(phoneNumber) {
         if (input === copiedText){ // Si l'utilisateur a entré le numéro de téléphone correctement
             console.log("Vous appelez ce numéro : " + copiedText);
             let audio = new Audio('/src/sound/sonnerie.mp3');
+            audio.volume = 1;
             audio.play();
             // On arrête la sonnerie au bout de 5 secondes
             setTimeout(function() {

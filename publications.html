@@ -47,9 +47,13 @@
  <div id="allButton">
   <fieldset>
     <legend>Choisir ce que vous souhaitez voir</legend>
+    <div>
+      <input id="all" type="radio" onclick="reset()" name="drone" checked>
+      <label>Toutes</label>
+    </div>
 
     <div>
-      <input id="revue" type="radio" onclick="revue()" name="drone" checked>
+      <input id="revue" type="radio" onclick="revue()" name="drone">
       <label>Revue</label>
     </div>
 
@@ -58,10 +62,7 @@
       <label>Communication</label>
     </div>
 
-    <div>
-      <input id="all" type="radio" onclick="reset()" name="drone">
-      <label>Toutes</label>
-    </div>
+
 </fieldset>
 <input type="text" id="entry_title" placeholder="Title" onkeypress="searchTitle(event)">
 <input type="text" id="entry_author" placeholder="Nom d'auteur" onkeypress="searchAuthor(event)">
