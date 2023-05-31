@@ -63,12 +63,15 @@ img{
 
 #usrnError{
     color: red;
+    text-align: center;
 }
 
 #emailError{
     color: red;
+    text-align: center;
 }
 
 #textarea1Error{
     color: red;
+    text-align: center;
 }

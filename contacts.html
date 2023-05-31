@@ -5,6 +5,10 @@
    <title> Contacts </title>
    <link rel="icon" href="/src/img/icon.png" type="image/x-icon">
    <script src="/src/js/navbarAndFooter.js" defer></script>
+   <script src="/src/js/InfosEtContact/contacts/roulette.js" defer></script>
+   <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
+   <script src='https://cdnjs.cloudflare.com/ajax/libs/hammer.js/2.0.8/hammer.min.js'></script>
+   <link rel="stylesheet" href="/src/css/style_roulette.css">
    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
    <script src="src/js/InfosEtContact/contacts/contacts.js" defer></script>
    <script src="https://kit.fontawesome.com/5b8b37978c.js" crossorigin="anonymous"></script>
@@ -45,26 +49,80 @@
    <div id="hour"></div>
  </nav>
  <h1 id = text><strong>Contactez le responsable de l’équipe</strong> <br>(Maher Jridi - maher.jridi@isen-ouest.yncrea.fr)</h1>
-  <form action="contacts.html" method="get" class="formulaire">
-    <a id="usrnError"></a>
+  <form action="contacts.html" method="get" id="formulaire">
+    <div class="center">
+      <a id="usrnError"></a>
+    </div>
     <div class="center">
       <div class="input-container">
         <img class="icon" src="/src/img/svg/user-solid.svg">
         <input class="input-field" type="text" placeholder="Prénom Nom" name="usrnm" id="usrnInp">
       </div>
     </div>
-    <a id="emailError"></a>
+    <div class="center">
+      <a id="emailError"></a>
+    </div>
     <div class="center">
       <div class="input-container">
         <img class="icon" src="/src/img/svg/at-solid.svg">
         <input class="input-field" type="text" placeholder="email@exemple.com" name="email" id="emailInp">
       </div>
     </div>
-    <a id="textarea1Error"></a>
+    <div class="center">
+      <a id="textarea1Error"></a>
+    </div>
     <br>
-    <textarea name="textarea1" placeholder="Votre message (1000 caractères maximum)" rows="5" cols="50" id="textarea1Inp"></textarea><br>
-    <button id="submitBtn" class="btn">Envoyer</button>
+    <div class="center">
+      <textarea name="textarea1" placeholder="Votre message (1000 caractères maximum)" rows="5" cols="50" id="textarea1Inp"></textarea><br>
+    </div>
+    <div class="center">
+      <button id="submitBtn" class="btn">Envoyer</button>
+    </div>
   </form>
+   <h2>Rouge ou vert vous gagnez, noir vous perdez!</h2>
+   <div class="center">
+   <div class="plate" id="plate">
+     <ul class="inner">
+       <li class="number"><label><input type="radio" name="pit" value="32" /><span class="pit">32</span></label></li>
+       <li class="number"><label><input type="radio" name="pit" value="15" /><span class="pit">15</span></label></li>
+       <li class="number"><label><input type="radio" name="pit" value="19" /><span class="pit">19</span></label></li>
+       <li class="number"><label><input type="radio" name="pit" value="4" /><span class="pit">4</span></label></li>
+       <li class="number"><label><input type="radio" name="pit" value="21" /><span class="pit">21</span></label></li>
+       <li class="number"><label><input type="radio" name="pit" value="2" /><span class="pit">2</span></label></li>
+       <li class="number"><label><input type="radio" name="pit" value="25" /><span class="pit">25</span></label></li>
+       <li class="number"><label><input type="radio" name="pit" value="17" /><span class="pit">17</span></label></li>
+       <li class="number"><label><input type="radio" name="pit" value="34" /><span class="pit">34</span></label></li>
+       <li class="number"><label><input type="radio" name="pit" value="6" /><span class="pit">6</span></label></li>
+       <li class="number"><label><input type="radio" name="pit" value="27" /><span class="pit">27</span></label></li>
+       <li class="number"><label><input type="radio" name="pit" value="13" /><span class="pit">13</span></label></li>
+       <li class="number"><label><input type="radio" name="pit" value="36" /><span class="pit">36</span></label></li>
+       <li class="number"><label><input type="radio" name="pit" value="11" /><span class="pit">11</span></label></li>
+       <li class="number"><label><input type="radio" name="pit" value="30" /><span class="pit">30</span></label></li>
+       <li class="number"><label><input type="radio" name="pit" value="8" /><span class="pit">8</span></label></li>
+       <li class="number"><label><input type="radio" name="pit" value="23" /><span class="pit">23</span></label></li>
+       <li class="number"><label><input type="radio" name="pit" value="10" /><span class="pit">10</span></label></li>
+       <li class="number"><label><input type="radio" name="pit" value="5" /><span class="pit">5</span></label></li>
+       <li class="number"><label><input type="radio" name="pit" value="24" /><span class="pit">24</span></label></li>
+       <li class="number"><label><input type="radio" name="pit" value="16" /><span class="pit">16</span></label></li>
+       <li class="number"><label><input type="radio" name="pit" value="33" /><span class="pit">33</span></label></li>
+       <li class="number"><label><input type="radio" name="pit" value="1" /><span class="pit">1</span></label></li>
+       <li class="number"><label><input type="radio" name="pit" value="20" /><span class="pit">20</span></label></li>
+       <li class="number"><label><input type="radio" name="pit" value="14" /><span class="pit">14</span></label></li>
+       <li class="number"><label><input type="radio" name="pit" value="31" /><span class="pit">31</span></label></li>
+       <li class="number"><label><input type="radio" name="pit" value="9" /><span class="pit">9</span></label></li>
+       <li class="number"><label><input type="radio" name="pit" value="22" /><span class="pit">22</span></label></li>
+       <li class="number"><label><input type="radio" name="pit" value="18" /><span class="pit">18</span></label></li>
+       <li class="number"><label><input type="radio" name="pit" value="29" /><span class="pit">29</span></label></li>
+       <li class="number"><label><input type="radio" name="pit" value="7" /><span class="pit">7</span></label></li>
+       <li class="number"><label><input type="radio" name="pit" value="28" /><span class="pit">28</span></label></li>
+       <li class="number"><label><input type="radio" name="pit" value="12" /><span class="pit">12</span></label></li>
+       <li class="number"><label><input type="radio" name="pit" value="35" /><span class="pit">35</span></label></li>
+       <li class="number"><label><input type="radio" name="pit" value="3" /><span class="pit">3</span></label></li>
+       <li class="number"><label><input type="radio" name="pit" value="26" /><span class="pit">26</span></label></li>
+       <li class="number"><label><input type="radio" name="pit" value="0" /><span class="pit">0</span></label></li>
+     </ul>
+   </div>
+   </div>
  <br>
  </div>
     <footer>

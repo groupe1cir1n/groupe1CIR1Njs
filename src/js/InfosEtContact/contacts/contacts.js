@@ -51,7 +51,7 @@ function validateForm() {
     }
 }
 
-
+/*
 document.getElementById("submitBtn").addEventListener("click", function() {
     //Pile ou face
     let pileOuFace = prompt("Pile ou face ?");
@@ -76,7 +76,7 @@ document.getElementById("submitBtn").addEventListener("click", function() {
         window.location.reload();
     }
 });
-
+*/
 // appeler la fonction validateForm à chaque fois qu'un champ est modifié
 document.getElementById("usrnInp").addEventListener("input", validateForm);
 document.getElementById("emailInp").addEventListener("input", validateForm);
@@ -85,4 +85,3 @@ document.getElementById("textarea1Inp").addEventListener("input", validateForm);
 //Appeler la fonction validateForm au chargement de la page
 validateForm();
 
-console.log("contacts.js chargé !");
