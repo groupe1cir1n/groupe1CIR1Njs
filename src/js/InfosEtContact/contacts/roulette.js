@@ -5,7 +5,7 @@ let $inner = $('.inner'),
     maskDefault = 'Faites vos jeux',
     timer = 9000;
 
-let red = [32,19,21,25,34,27,36,30,23,5,16,1,14,9,18,7,12,3];
+let black = [32,19,21,25,34,27,36,30,23,5,16,1,14,9,18,7,12,3];
 
 
 
@@ -35,8 +35,8 @@ $spin.on('click',function(event){
     // remove the disabled attribute when the ball has stopped
     setTimeout(function() {
 
-        if($.inArray(randomNumber, red) !== -1){ color = 'red'} else { color = 'black'};
-        if(randomNumber == 0){color = 'green'};
+        if($.inArray(randomNumber, black) === -1){ color = 'red'} else { color = 'black'};
+        if(randomNumber === 0){color = 'green'};
 
         $data.addClass('reveal');
         $inner.addClass('rest');
